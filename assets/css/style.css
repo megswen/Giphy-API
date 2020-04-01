@@ -1,15 +1,49 @@
-#button-box {
+.main {
 
 }
 
-#gif-form {
-
+.jumbotron {
+    text-align: center;
+    background-color: rgb(92, 168, 149);
+    height: 200px;
+    font-size: 80px;
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 
-#userinput-box {
-
+.instructions {
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+    color: gray;
+    font-family: 'Roboto', sans-serif;
 }
 
-#gifreturn-box {
+button {
+    background-color: rgb(37, 53, 61);
+    border: none;
+}
 
+.tvshows {
+    margin: 10px;
+    border-radius: 4px;
+    padding: 3px;
+    color: white;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    text-align: center;
+    color: gray;
+}
+
+.gif {
+    margin: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+img {
+    margin: auto;
 }

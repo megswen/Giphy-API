@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang=en>
 <head>
+    <!--Adding Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Adding reset CSS-->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Adding style CSS-->
     <link rel="stylesheet" href="assets/css/reset.css">
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 
     <title>Giphy APIs</title>
 </head>
 <body>
-    <!--Buttons will go here-->
-    <div id="button-box"></div>
+    <div class="main">
+        <h1 class="jumbotron">TV Show Gifs!</h1>
 
-    <!--Gifs will be dumped here-->
-    <div id="gifreturn-box"></div>
+        <div class="col-lg-8 mx-auto">
+            <div class="instructions">Click on a button to see the gifs!</div>
+
+            <!--Buttons will go here--> 
+            <div id="button-box"></div>
+        </div>
+        <div class="col-lg-4 mx-auto">
+            <!--Gifs will be dumped here-->
+            <div id="gifreturn-box"></div>
+        </div>
+    </div>
 
     <!--Adding jQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
