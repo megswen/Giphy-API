@@ -34,18 +34,18 @@ $(".tvshows").click(function() {
             var topicsDiv = $("<div>");
             var rating = $("<p>").text("Rating: " + results[x].rating);
             var topicsImage = $("<img>");
+            topicsDiv.addClass("gif");
             topicsImage.attr("src", results[x].images.fixed_height.url);
             topicsDiv.append(rating);
             topicsDiv.append(topicsImage);
-            topicsDiv.addClass("gif");
             $("#gifreturn-box").prepend(topicsDiv);
         }
     });
 });
 
 // On click function to start and stop the animation of the gifs
-$(".gif").click(function() {
-    // Create a var called state and store the image's data-state in it
+$(".gif").click(function animate() {
+// $(".gif").on("click", function() {
     var state = $(this).attr("data-state");
     var still = $(this).attr("data-still");
     var animate = $(this).attr("data-animate");
