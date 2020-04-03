@@ -34,30 +34,33 @@ $(".tvshows").click(function() {
             var topicsDiv = $("<div>");
             var rating = $("<p>").text("Rating: " + results[x].rating);
             var topicsImage = $("<img>");
-            topicsDiv.addClass("gif");
-            topicsImage.attr("src", results[x].images.fixed_height.url);
+            topicsImage.attr("src", results[x].images.original.url);
+            topicsImage.attr("data-still", results[x].images.original_still.url);
+            topicsImage.attr("data-animate", results[x].images.original.url);
+            topicsImage.attr("data-state", "still");
+            topicsImage.addClass("gif");
             topicsDiv.append(rating);
             topicsDiv.append(topicsImage);
             $("#gifreturn-box").prepend(topicsDiv);
         }
     });
-});
 
-// On click function to start and stop the animation of the gifs
-$(".gif").click(function animate() {
-// $(".gif").on("click", function() {
-    var state = $(this).attr("data-state");
-    var still = $(this).attr("data-still");
-    var animate = $(this).attr("data-animate");
-    if (state === "still") {
-        state = "animate";
-        console.log("still");
-        $(this).attr("src", animate);
-        $(this).attr("data-state", state);
-    } else if (state === "animate") {
-        console.log("animate");
-        state = "still";
-        $(this).attr("src", still);
-        $(this).attr("data-state", state);
-    }
+    // On click function to start and stop the animation of the gifs
+    $(".gif").on("click", function() {
+        var source = $(this).attr("src");
+        var state = $(this).attr("data-state");
+        var still = $(this).attr("data-still");
+        var animate = $(this).attr("data-animate");
+        if (state === still) {
+            state = animate;
+            console.log("animate");
+            $(this).attr("src", animate);
+            $(this).attr("data-state", state);
+        } else if (state === animate) {
+            state = still;
+            console.log("still");
+            $(this).attr("src", still);
+            $(this).attr("data-state", state);
+        }
+    });
 });
