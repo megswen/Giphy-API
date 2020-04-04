@@ -43,24 +43,23 @@ $(".tvshows").click(function() {
             topicsDiv.append(topicsImage);
             $("#gifreturn-box").prepend(topicsDiv);
         }
-    });
 
-    // On click function to start and stop the animation of the gifs
-    $(".gif").on("click", function() {
-        var source = $(this).attr("src");
-        var state = $(this).attr("data-state");
-        var still = $(this).attr("data-still");
-        var animate = $(this).attr("data-animate");
-        if (state === still) {
-            state = animate;
-            console.log("animate");
-            $(this).attr("src", animate);
-            $(this).attr("data-state", state);
-        } else if (state === animate) {
-            state = still;
-            console.log("still");
-            $(this).attr("src", still);
-            $(this).attr("data-state", state);
-        }
+        // On click function to start and stop the animation of the gifs
+        $(".gif").on("click", function() {
+            var state = $(this).attr("data-state");
+            var still = $(this).attr("data-still");
+            var animate = $(this).attr("data-animate");
+            if (state === still) {
+                state = animate;
+                console.log("animate");
+                $(this).attr("src", animate);
+                $(this).attr("data-state", state);
+            } else {
+                state = still;
+                console.log("still");
+                $(this).attr("src", still);
+                $(this).attr("data-state", state);
+            }
+        });
     });
 });
